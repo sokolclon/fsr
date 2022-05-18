@@ -12,7 +12,7 @@
 
 #define E 2.718281828459045
 
-void rgba_to_grayscale(float *img_in, float *black_white, int iw, int ih, int n) {
+void rgba_to_grayscale(unsigned char *img_in, float *black_white, int iw, int ih, int n) {
 	int j = 0;
 	for (int i = 0; i < ih * iw * 1; i++) {
 		black_white[i] = (img_in[j] * 11 + img_in[j + 1] * 16 + img_in[j + 2] * 5) / 32;
@@ -166,7 +166,7 @@ int main() {
 		img[i] = (float)idata[i];
 	}
 
-	rgba_to_grayscale(img, black_white, iw, ih, n);
+	rgba_to_grayscale(idata, black_white, iw, ih, n);
 //	gaussian_blur(black_white, img_blured, iw, ih, 3, 1, 1);
 //	grayscale_to_rgba(img_blured, img_out_rgb, iw, ih);
 
