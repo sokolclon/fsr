@@ -167,13 +167,13 @@ int main() {
 	}
 
 	rgba_to_grayscale(img, black_white, iw, ih, n);
-	gaussian_blur(black_white, img_blured, iw, ih, 3, 1, 1);
-	grayscale_to_rgba(img_blured, img_out_rgb, iw, ih);
+//	gaussian_blur(black_white, img_blured, iw, ih, 3, 1, 1);
+//	grayscale_to_rgba(img_blured, img_out_rgb, iw, ih);
 
-	img_out = arr_to_img(iw, ih, img_blured);
+//	img_out = arr_to_img(iw, ih, img_blured);
 
 	char *outputPath = "result.png";
-	stbi_write_png(outputPath, iw, ih, 1, img_out, 0);
+	stbi_write_png(outputPath, iw, ih, 1, black_white, 0);
 
 	stbi_image_free(img);
 	stbi_image_free(idata);
