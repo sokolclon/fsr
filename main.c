@@ -347,7 +347,7 @@ int main(int argc, char **argv) {
 
 	arr_to_img(colored_image,img_out,iw,ih,m);
 
-	char *outputPath = "result_skull.png";
+	char *outputPath = "result_implant.png";
 	stbi_write_png(outputPath, iw, ih, m, img_out, 0);
 	
 	stbi_image_free(img);
