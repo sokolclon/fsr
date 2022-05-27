@@ -337,11 +337,6 @@ int main(int argc, char **argv) {
 		img[i] = idata[i];
 	}
 
-	if (idata == NULL) {
-		printf("ERROR: can't read file %s\n", inputPath);
-		return 1;
-	}
-
 	rgba_to_grayscale(img, black_white, iw, ih,n);
 	gaussian_blur(black_white, img_blured, iw, ih,5,1.5,1);
 	compressor(img_blured, img_compessed, iw, ih);
@@ -352,7 +347,7 @@ int main(int argc, char **argv) {
 
 	arr_to_img(colored_image,img_out,iw,ih,m);
 
-	char *outputPath = "result.png";
+	char *outputPath = "result_hamster.png";
 	stbi_write_png(outputPath, iw, ih, m, img_out, 0);
 	
 	stbi_image_free(img);
